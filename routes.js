@@ -2,11 +2,6 @@ const express = require("express");
 const router = express.Router();
 
 
-
-// let db = require("./db");
-
-// db.criarDB("minhaBaseDados");
-
 //Especifica a pasta contendo arquivos estáticos. 
 //O nome 'public' não precisará ser colocado na rota 
 //Para serem alcançados os arquivos e pastas que estão dentro dele. 
@@ -51,7 +46,7 @@ router.post('/cadastro/remove',(req,res)=>{
 
     if(users.length==0){
         console.log("Erro: Não há elemento a ser removido!");
-        return res.status(400).json({
+        return res.status(500).json({
             status:'error',
             error:`Removed element: ${name}`
         });
@@ -70,7 +65,7 @@ router.post('/cadastro/remove',(req,res)=>{
                 console.log("Erro ao remover elemento: ",name);
                 return res.status(400).json({
                     status:'error',
-                    error:`Removed element: ${name}`
+                    error:`Didn't Remove element: ${name}`
                 });
             }
         }
@@ -119,8 +114,12 @@ router.post('/cadastro/add',(req,res)=>{
 
     users.push(user);
     console.log("Usuário cadastrado: ",user);
-    console.log("Lista dos usuários: ",users)
+    console.log("Lista dos usuários: ",users); //nao use esta linha se tiver muitos elementos em users pois causara lentidao no servidor
     res.sendStatus(200);
+    res.status(200).json({
+        status:'sucess',
+        data: `Usuário ${user} foi adiocionado com sucesso!`
+    });
 
 });
 

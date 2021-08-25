@@ -6,6 +6,7 @@ function update(index,link){
     let tds = document.querySelectorAll(`td[data-index-row='${index}']`);
     let spans = document.querySelectorAll(`td[data-index-row='${index}'] > span`);
     let inputs = document.querySelectorAll(`td[data-index-row='${index}'] > input`);
+
     let lenTds = tds.length-1; //numero de tds de uma linha da tabela
     let linkUpdate = tds[lenTds-1]; //retorna o conteudo da penultima td, no caso, o link de update
     let linkRemove = tds[lenTds];
@@ -157,7 +158,7 @@ function update(index,link){
 
 }
 
-function remove(index,name,link){ //(index,link)
+function remove(index,_name,link){ //(index,link)
 
     //escuta se o botao foi clicado
 
@@ -168,7 +169,7 @@ function remove(index,name,link){ //(index,link)
     http.setRequestHeader('Content-Type','application/json'); //constroi um cabecalho http para envio dos dados
 
     //dataToSend = JSON.stringify({id:index}); //transforma o objeto literal em uma string JSON que é a representação em string de um objeto JSON
-    dataToSend = JSON.stringify({name:name}); //transforma o objeto literal em uma string JSON que é a representação em string de um objeto JSON
+    dataToSend = JSON.stringify({name:_name}); //transforma o objeto literal em uma string JSON que é a representação em string de um objeto JSON
 
     http.send(dataToSend);//envia dados para o servidor na forma de JSON
 
@@ -200,7 +201,7 @@ function remove(index,name,link){ //(index,link)
             console.log(`Item ${index} removido com sucesso!`);
 
         } else {
-            console.log(`Erro durante a tentativa de remoção do usuário: ${name}! Código do Erro: ${http.status}`); 
+            console.log(`Erro durante a tentativa de remoção do usuário: ${_name}! Código do Erro: ${http.status}`); 
         }
         
 
@@ -209,12 +210,31 @@ function remove(index,name,link){ //(index,link)
    
 function add(data){
     //Adiciona um dado novo
-
-
-
-
 }
 
+function list(){
+    //fazer em casa. Lista de usuários.
+
+    //Primeira parte: envia mensagem para o servidor pedindo uma listagem dos usuários
+
+    //Segunda parte: apos recebimento da lista de usuarios, no formato JSON, colocar os usuarios na interface
+    let tableList = document.getElementById("list");
+
+    let tr = document.createElement("tr");
+    let td = document.createElement("td");
+    let span = document.createElement("span");
+    let cont;
+    //for(let cont=0;cont<datas.length;cont++){ 
+        td.setAttribute(`data-index-row=${cont}`);
+        span.innerHTML =  Object.keys(datas[cont])[0] //keys 0 - name, 1 - email
+        span.className="show";
+        td.appendChild(span);
+        tr.appendChild(td);
+        
+        tableList.appendChild(tr);
+    //}
+
+}
 
    
 

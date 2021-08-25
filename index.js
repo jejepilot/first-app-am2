@@ -57,9 +57,6 @@ app.use(express.json()); //prepara a aplicacao para receber dados no formato JSO
 app.use('/',routes);
 
 //Criando um servidor simples com o Node.js e o Express
-
-
-
 const server = app.listen(port,address,()=>{
     let host = server.address().address;
     let port = server.address().port;
