@@ -1,0 +1,30 @@
+{
+  "name": "first-app-tentativa-mil",
+  "version": "0.1.0",
+  "description": "por favor não me preprova, não faço ideia de como fazer isso direito",
+  "main": "index.js",
+  "scripts": {
+    "test": "oi"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jejepilot/first-app-tentativa-mil.git"
+  },
+  "keywords": [
+    "am2"
+  ],
+  "author": "Jeremias Oliveira M. Neto",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/jejepilot/first-app-tentativa-mil/issues"
+  },
+  "homepage": "https://github.com/jejepilot/first-app-tentativa-mil#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.1",
+    "faker": "^5.5.3",
+    "layouts": "^3.0.2",
+    "node": "^16.6.1"
+  }
+}
