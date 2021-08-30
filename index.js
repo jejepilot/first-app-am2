@@ -1,6 +1,6 @@
 /*
 * Exemplo de aplicação Node.js com MongoDB
-* Autor: Wellington Wagner F. Sarmento
+* Autor: Jeremias OLiveira Moreira Neto
 * 
 *
 * Este exemplo foi baseado no código escrito em:

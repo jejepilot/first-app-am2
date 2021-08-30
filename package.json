@@ -1,7 +1,7 @@
 {
-  "name": "first-app-tentativa-mil",
+  "name": "first-app-am2",
   "version": "0.1.0",
-  "description": "por favor não me preprova, não faço ideia de como fazer isso direito",
+  "description": "trabalho para a matéria de AM2",
   "main": "index.js",
   "scripts": {
     "test": "oi"
