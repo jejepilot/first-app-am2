@@ -223,12 +223,12 @@ function valiDados(inputs){
         return false
     }
 
-    if(data.vote == "sim" || data.vote == "SIM" || data.vote == "Sim" || data.vote == "sIm" || data.vote == "siM" || data.vote == "SIm" || data.vote == "sIM" || data.vote == "SiM"){
+    if(data.vote == "True" ||data.vote == "true" ||data.vote == "tRue" ||data.vote == "trUe" ||data.vote == "truE" ||data.vote == "TRUE"){
         inputs[5].value = true;
-    } else if(data.vote == "não" || data.vote == "NÃO" || data.vote == "Não" || data.vote == "nÃo" || data.vote == "nãO" || data.vote == "NÃo" || data.vote == "nÃO" || data.vote == "NãO" || data.vote == "nao" || data.vote == "NAO" || data.vote == "Nao" || data.vote == "nAo" || data.vote == "naO" || data.vote == "NAo" || data.vote == "nAO" || data.vote == "NaO"){
+    } else if(data.vote == "False" || data.vote == "false" || data.vote == "fAlse" || data.vote == "faLse" || data.vote == "falSe" || data.vote == "falsE" || data.vote == "FALSE"){
         inputs[5].value = false;
     } else {
-        alert("Campo de votação inválido.");
+        alert("Campo de votação inválido. Lembre-se, True para sim, False para não, para que os dados possam ser atualizados posteriormente, sem complicações");
         return false
     }
 
